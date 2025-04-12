@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Wash Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      color: #003366;
+    }
+    header {
+      background: linear-gradient(to right, #007BFF, #00BFFF);
+      color: white;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 2em;
+      background: #e6f2ff;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    .hero button {
+      padding: 1em 2em;
+      font-size: 1em;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero button:hover {
+      background: #0056b3;
+    }
+    section {
+      padding: 2em;
+    }
+    .section-title {
+      font-size: 1.8em;
+      margin-bottom: 1em;
+    }
+    .about, .contact {
+      background: #d9ecff;
+      border-radius: 10px;
+      padding: 1.5em;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1em;
+      text-align: center;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 1em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product button {
+      margin-top: 0.5em;
+      padding: 0.5em 1em;
+      background: #00b894;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .product button:hover {
+      background: #00897b;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #007BFF;
+      color: white;
+    }
+    @media (max-width: 600px) {
+      header, .hero, section {
+        padding: 1em;
+        text-align: center;
+      }
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script>
+    function addToCart(product) {
+      alert(product + " added to cart!");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h2>CAR WASH</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Car Care Products</h1>
+    <p>Everything you need to keep your ride shining!</p>
+    <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' });">Shop Now</button>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-title">About Us</div>
+    <p>
+      We provide high-quality car care products designed to keep your vehicle looking its best. From soap to hoses, we’ve got you covered.
+    </p>
+  </section>
+
+  <section id="products">
+    <div class="section-title">Featured Products</div>
+    <div class="products">
+      <div class="product">
+        <div>Car Wash Soap</div>
+        <button onclick="addToCart('Car Wash Soap')">Add to Cart</button>
+      </div>
+      <div class="product">
+        <div>Spray Bottle</div>
+        <button onclick="addToCart('Spray Bottle')">Add to Cart</button>
+      </div>
+      <div class="product">
+        <div>Hose Attachment</div>
+        <button onclick="addToCart('Hose Attachment')">Add to Cart</button>
+      </div>
+      <div class="product">
+        <div>Foam Bucket</div>
+        <button onclick="addToCart('Foam Bucket')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-title">Contact</div>
+    <p>
+      For questions or orders, reach out to us at <strong>info@carwashstore.com</strong>.
+    </p>
+    <form onsubmit="alert('Message sent!'); return false;">
+      <input type="text" placeholder="Your Name" required style="width: 100%; margin: 0.5em 0; padding: 0.5em;">
+      <input type="email" placeholder="Your Email" required style="width: 100%; margin: 0.5em 0; padding: 0.5em;">
+      <textarea placeholder="Your Message" required style="width: 100%; margin: 0.5em 0; padding: 0.5em;"></textarea>
+      <button type="submit" style="padding: 0.5em 1em; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Car Wash Store. All rights reserved.
+  </footer>
+</body>
+</html>
